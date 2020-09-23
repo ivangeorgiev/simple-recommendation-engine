@@ -77,6 +77,15 @@ SELECT f.*,
   JOIN products p2 ON p2.ProductKey = f.ProductKey2
   ORDER BY score DESC LIMIT 20;
 
+SELECT f.*,
+       p1.ProductName,
+       p2.ProductName
+  FROM combined_frequences f
+  JOIN products p1 ON p1.ProductKey = f.ProductKey1
+  JOIN products p2 ON p2.ProductKey = f.ProductKey2
+ WHERE f.ProductKey1 = 479
+  ORDER BY score DESC LIMIT 20;
+
   
 SELECT 12/293;
 SELECT CAST(12 AS DOUBLE)/293;
